@@ -90,13 +90,13 @@ async def game_info(ctx, info_option: str, info_type: str = "none"):
     await select_info_view(ctx, info_option, info_type)
 
 
-"""@bot.listen('on_message')
+@bot.listen('on_message')
 async def dont_ping(message):
     if message.author.id == bot.user.id:
         return
-    allowed_pings_users = [] #520923251367608322
-    dont_ping_roles = [867493906384289822, 981358842841563226]
-    dont_ping_exceptions_users = []
+    allowed_pings_users = []  # 520923251367608322 users who can ping anyone
+    dont_ping_roles = []  # roles on which bot notifies you not to ping
+    dont_ping_exceptions_users = []  # people from the above roles who want to be pinged
     if message.author.id in allowed_pings_users:
         return
     for user in message.mentions:
@@ -106,7 +106,7 @@ async def dont_ping(message):
             role = message.guild.get_role(role_id)
             if role in user.roles:
                 await message.reply("ay boy im a higher up than you your not allowed to ping me",
-                                    mention_author=True)"""
+                                    mention_author=True)
 
 
 bot.run(TOKEN)
