@@ -95,6 +95,7 @@ async def poop(ctx, anything: str):
     if ctx.user.id not in [520923251367608322, 801290250881335296]:
         await ctx.respond("You cannot use this you little sh*t",
                           ephemeral=True)
+        return
     await ctx.send(anything)
     await ctx.respond("Message sent", ephemeral=True)
 
