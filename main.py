@@ -90,6 +90,15 @@ async def game_info(ctx, info_option: str, info_type: str = "none"):
     await select_info_view(ctx, info_option, info_type)
 
 
+@bot.command(name="idkwtnt", guild_ids=[PRIV_GUILD_ID, BOXLOTL_GUILD_ID])
+async def poop(ctx, anything: str):
+    if ctx.user.id not in [520923251367608322, 801290250881335296]:
+        await ctx.respond("You cannot use this you little sh*t",
+                          ephemeral=True)
+    await ctx.send(anything)
+    await ctx.respond("Message sent", ephemeral=True)
+
+
 @bot.listen('on_message')
 async def dont_ping(message):
     if message.author.id == bot.user.id:
