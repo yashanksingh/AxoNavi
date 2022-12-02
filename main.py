@@ -82,7 +82,7 @@ async def get_choices(ctx: discord.AutocompleteContext):
         return Options.boss
 
 
-@bot.command(name="info", description="Get info about things in-game!", guild_ids=[PRIV_GUILD_ID, BOXLOTL_GUILD_ID])
+@bot.command(name="info", description="Get info about things in-game!")
 @option("info_option", str, description="Select an option you need info about!", choices=Options.main)
 @option("info_type", str, description="Select what you need info about!", autocomplete=get_choices)
 async def game_info(ctx, info_option: str, info_type: str = "none"):
