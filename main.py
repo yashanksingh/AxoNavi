@@ -103,7 +103,7 @@ async def get_choices(ctx: discord.AutocompleteContext):
 @bot.command(name="info", description="Get info about things in-game!")
 @option("info_option", str, description="Select an option you need info about!", choices=Options.main)
 @option("info_type", str, description="Select what you need info about!", autocomplete=get_choices)
-async def game_info(ctx: discord.ApplicationContext, info_option: str, info_type: str = "none"):
+async def game_info(ctx: discord.ApplicationContext, info_option: str = "Help", info_type: str = "none"):
     logger.info(f"{ctx.user} used /info {info_option} {info_type}")
     await ctx.respond(f"Hey {ctx.user}!")
     await select_info_view(ctx, info_option, info_type)

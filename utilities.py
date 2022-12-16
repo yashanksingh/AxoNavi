@@ -6,7 +6,7 @@ from info_boss import *
 
 class Options:
     main = ["Help", "NPCs", "Mobs and Bosses", "Items"]
-    boss = ["Crypt Slasher", "Elder Slasher", "Magmatic Spirit", "Royal Gargoyle"]
+    boss = ["Spider Queen", "Cuboid", "Demon", "Crypt Slasher", "Elder Slasher", "Magmatic Spirit", "Royal Gargoyle"]
 
 
 async def select_info_view(ctx, info_option: str, info_type: str = "none"):
@@ -81,7 +81,10 @@ class BossView(View):
         placeholder="Choose a Boss!",
         options=[
             SelectOption(
-                label="Axolotl-Infused Zombie",
+                label="Spider Queen",
+            ),
+            SelectOption(
+                label="Cuboid",
             ),
             SelectOption(
                 label="Demon",
