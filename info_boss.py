@@ -1,5 +1,6 @@
 from discord import Embed
 from discord import Colour
+import datetime
 
 
 async def select_info_boss_embed(ctx, boss_type: str):
@@ -27,8 +28,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n#3 Damager Drops:\n`100%` - 1 Spider Queen's Eye",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(
@@ -73,8 +75,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n#3 Damager Drops:\n` 1%` - Charred Magma Pants",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(
@@ -110,8 +113,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n`100%` - 1 Demon Scales",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(
@@ -148,8 +152,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n` 50%` - 4 Rotten Flesh",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(
@@ -180,8 +185,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n`  4%` - Forged Crimson",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(
@@ -217,8 +223,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n`0.8%` - Forged Crimson",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(
@@ -260,8 +267,9 @@ async def select_info_boss_embed(ctx, boss_type: str):
                                    "\n#3 Damager Drops:\n` 3%` - Gilded Dust",
                              inline=False)
 
-        main_embed.set_footer(text="AxoNavigator",
-                              icon_url="https://cdn.discordapp.com/emojis/981320857672618045.webp?size=128&quality=lossless")
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
         main_embed.set_author(name="Mobs and Bosses",
                               icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
         main_embed.set_thumbnail(

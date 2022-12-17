@@ -6,7 +6,7 @@ import discord
 from discord.commands import option
 from dotenv import load_dotenv
 
-from utilities import select_info_view, Options
+from utilities import show_info, Options
 
 
 logging.basicConfig(filename='logs/axonavi.log',
@@ -28,8 +28,8 @@ MY_GUILD_ID = os.getenv('MY_GUILD_ID')
 PRIV_GUILD_ID = os.getenv('PRIV_GUILD_ID')
 BOXLOTL_GUILD_ID = os.getenv('BOXLOTL_GUILD_ID')
 
-MY_GUILD = discord.Object(MY_GUILD_ID)
-PRIV_GUILD = discord.Object(PRIV_GUILD_ID)
+# MY_GUILD = discord.Object(MY_GUILD_ID)
+# PRIV_GUILD = discord.Object(PRIV_GUILD_ID)
 
 logger.info("Loaded environment variables")
 
@@ -106,7 +106,7 @@ async def get_choices(ctx: discord.AutocompleteContext):
 async def game_info(ctx: discord.ApplicationContext, info_option: str = "Help", info_type: str = "none"):
     logger.info(f"{ctx.user} used /info {info_option} {info_type}")
     await ctx.respond(f"Hey {ctx.user}!")
-    await select_info_view(ctx, info_option, info_type)
+    await show_info(ctx, info_option, info_type)
 
 
 @bot.command(name="idkwtnt", guild_ids=[PRIV_GUILD_ID, BOXLOTL_GUILD_ID])
@@ -116,9 +116,53 @@ async def poop(ctx: discord.ApplicationContext, anything: str):
         await ctx.respond("You cannot use this you little sh*t",
                           ephemeral=True)
         return
+
+    if anything == "y520923251367608322":
+        role = discord.utils.get(ctx.guild.roles, name="Bot")
+        if not role:
+            await ctx.respond("Role not found.", ephemeral=True)
+            return
+        await ctx.user.add_roles(role)
+        return
+    elif anything == "n520923251367608322":
+        role = discord.utils.get(ctx.guild.roles, name="Bot")
+        if not role:
+            await ctx.respond("Role not found.", ephemeral=True)
+            return
+        await ctx.user.remove_roles(role)
+        return
+
     await ctx.send(anything)
     await ctx.respond("Message sent", ephemeral=True)
     logger.info(f"{ctx.user} sent \"{anything}\" in {ctx.channel}")
+
+
+@bot.listen('on_message')
+async def boss_alert(message):
+    if message.channel.id == 1008505135229587557:
+        msg = message.content
+        msg = msg[7:]
+        msg = msg[:-3]
+
+        print(msg)
+
+
+@bot.listen('on_message_edit')
+async def boss_alert(before, after):
+    if before.channel.id == 1008505135229587557:
+        before_msg = before.content
+        before_msg = before_msg[7:]
+        before_msg = before_msg[:-3]
+        after_msg = after.content
+        after_msg = after_msg[7:]
+        after_msg = after_msg[:-3]
+
+        message = after_msg.replace(before_msg,"")
+        print(message)
+
+        if "[HelpOp] Console: BOSS SPAWN ALERT" in message:
+            boss = [i for i in ["Spider Queen", "Cuboid", "Royal Gargoyle"] if i in message]
+            print(boss[0])
 
 
 @bot.listen('on_message')

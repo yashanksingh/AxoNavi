@@ -9,7 +9,7 @@ class Options:
     boss = ["Spider Queen", "Cuboid", "Demon", "Crypt Slasher", "Elder Slasher", "Magmatic Spirit", "Royal Gargoyle"]
 
 
-async def select_info_view(ctx, info_option: str, info_type: str = "none"):
+async def show_info(ctx, info_option: str, info_type: str = "none"):
     if info_option == "Help":
         await ctx.followup.send("Select an option you need info about!", view=InfoMainView())
     if info_option == "NPCs":
@@ -48,7 +48,7 @@ class InfoMainView(View):
         select.disabled = True
         select.placeholder = select.values[0]
         await interaction.response.edit_message(view=self)
-        await select_info_view(interaction, select.values[0])
+        await show_info(interaction, select.values[0])
 
 
 class NPCView(View):
