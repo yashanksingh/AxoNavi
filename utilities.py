@@ -8,6 +8,23 @@ class Options:
     main = ["Help", "NPCs", "Mobs and Bosses", "Items"]
     boss = ["Spider Queen", "Cuboid", "Demon", "Crypt Slasher", "Elder Slasher", "Magmatic Spirit", "Royal Gargoyle"]
 
+async def boss_spawn_alert(boss, channel):
+    main_embed = Embed(
+        # title=boss,
+        color=Colour.red(),
+    )
+
+    main_embed.add_field(name=f"{boss} has spawned!",
+                         value=f"To know more about {boss}, use `/info`!")
+
+    main_embed.timestamp = datetime.datetime.now()
+    main_embed.set_footer(text="AxoNavi",
+                          icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
+    main_embed.set_author(name="Boss Spawn Alert",
+                          icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/crossed-swords_2694-fe0f.png")
+
+    await channel.send(embed=main_embed)
+
 
 async def show_info(ctx, info_option: str, info_type: str = "none"):
     if info_option == "Help":

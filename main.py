@@ -6,7 +6,7 @@ import discord
 from discord.commands import option
 from dotenv import load_dotenv
 
-from utilities import show_info, Options
+from utilities import show_info, boss_spawn_alert, Options
 
 
 logging.basicConfig(filename='logs/axonavi.log',
@@ -140,29 +140,23 @@ async def poop(ctx: discord.ApplicationContext, anything: str):
 @bot.listen('on_message')
 async def boss_alert(message):
     if message.channel.id == 1008505135229587557:
-        msg = message.content
-        msg = msg[7:]
-        msg = msg[:-3]
+        msg = message.content[7:-3]
 
-        print(msg)
+        if "[HelpOp] Console: BOSS SPAWN ALERT" in msg:
+            boss = [i for i in Options.boss if i in msg]
+            channel = bot.get_channel(983309486905229313)
+            await boss_spawn_alert(boss[0], channel)
 
 
 @bot.listen('on_message_edit')
 async def boss_alert(before, after):
     if before.channel.id == 1008505135229587557:
-        before_msg = before.content
-        before_msg = before_msg[7:]
-        before_msg = before_msg[:-3]
-        after_msg = after.content
-        after_msg = after_msg[7:]
-        after_msg = after_msg[:-3]
+        msg = after.content[7:-3].replace(before.content[7:-3],"")
 
-        message = after_msg.replace(before_msg,"")
-        print(message)
-
-        if "[HelpOp] Console: BOSS SPAWN ALERT" in message:
-            boss = [i for i in ["Spider Queen", "Cuboid", "Royal Gargoyle"] if i in message]
-            print(boss[0])
+        if "[HelpOp] Console: BOSS SPAWN ALERT" in msg:
+            boss = [i for i in Options.boss if i in msg]
+            channel = bot.get_channel(983309486905229313)
+            await boss_spawn_alert(boss[0], channel)
 
 
 @bot.listen('on_message')
