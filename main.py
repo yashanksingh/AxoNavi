@@ -139,23 +139,23 @@ async def poop(ctx: discord.ApplicationContext, anything: str):
 
 @bot.listen('on_message')
 async def boss_alert(message):
-    if message.channel.id == 1008505135229587557:
+    if message.channel.id == 1008505135229587557: # console
         msg = message.content[7:-3]
 
         if "[HelpOp] Console: BOSS SPAWN ALERT" in msg:
             boss = [i for i in Options.boss if i in msg]
-            channel = bot.get_channel(983309486905229313)
+            channel = bot.get_channel(1053902926801797150) # boss-spawn
             await boss_spawn_alert(boss[0], channel)
 
 
 @bot.listen('on_message_edit')
 async def boss_alert(before, after):
-    if before.channel.id == 1008505135229587557:
+    if before.channel.id == 1008505135229587557: # console
         msg = after.content[7:-3].replace(before.content[7:-3],"")
 
         if "[HelpOp] Console: BOSS SPAWN ALERT" in msg:
             boss = [i for i in Options.boss if i in msg]
-            channel = bot.get_channel(983309486905229313)
+            channel = bot.get_channel(1053902926801797150) # boss-spawn
             await boss_spawn_alert(boss[0], channel)
 
 

@@ -22,8 +22,8 @@ async def boss_spawn_alert(boss, channel):
                           icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
     main_embed.set_author(name="Boss Spawn Alert",
                           icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/crossed-swords_2694-fe0f.png")
-
-    await channel.send(embed=main_embed)
+    role = discord.utils.get(channel.guild.roles, name=boss)
+    await channel.send(f"{role.mention}", embed=main_embed)
 
 
 async def show_info(ctx, info_option: str, info_type: str = "none"):
