@@ -8,6 +8,7 @@ class Options:
     main = ["Help", "NPCs", "Mobs and Bosses", "Items"]
     boss = ["Spider Queen", "Cuboid", "Grave Digger", "Demon", "Crypt Slasher", "Elder Slasher", "Magmatic Spirit", "Royal Gargoyle"]
 
+
 async def boss_spawn_alert(boss, channel):
     main_embed = Embed(
         # title=boss,
