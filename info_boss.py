@@ -90,6 +90,44 @@ async def select_info_boss_embed(ctx, boss_type: str):
         await ctx.followup.send(embeds=[main_embed, image_embed])
         return
 
+    if boss_type == "Grave Digger":
+        main_embed = Embed(
+            title="Grave Digger",
+            color=Colour.orange(),
+        )
+
+        main_embed.add_field(name="Type", value="Basic Enemy", inline=True)
+        main_embed.add_field(name="Location", value="Graveyard", inline=True)
+        main_embed.add_field(name="Nearest Warp", value="graveyard", inline=True)
+
+        main_embed.add_field(name="Spawning",
+                             value="`5%` chance every `30` seconds\nCapped at `40`",
+                             inline=False)
+        main_embed.add_field(name="General Drops",
+                             value="  `0.3%` - 1 Rusted Shovel"
+                                   "\n` 10%` - 32 Rotten Flesh"
+                                   "\n` 20%` - 16 Rotten Flesh"
+                                   "\n` 40%` - 8 Rotten Flesh"
+                                   "\n` 60%` - 4 Rotten Flesh"
+                                   "\n` 80%` - 2 Rotten Flesh"
+                                   "\n`100%` - 1 Rotten Flesh",
+                             inline=False)
+
+        main_embed.timestamp = datetime.datetime.now()
+        main_embed.set_footer(text="AxoNavi",
+                              icon_url="https://cdn.discordapp.com/attachments/843077857492467742/1053664423513964615/1671283545940.png")
+        main_embed.set_author(name="Mobs and Bosses",
+                              icon_url="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/skull-and-crossbones_2620-fe0f.png")
+        main_embed.set_thumbnail(
+            url="https://mc-heads.net/avatar/f774534ac3567dedfe330c98b91bc28e1151005525a84e2b5d720cff62316d76")
+
+        image_embed = Embed(color=Colour.orange())
+        image_embed.set_image(
+            url="https://cdn.discordapp.com/attachments/965142041623429162/1054428136865017866/image.png")
+
+        await ctx.followup.send(embeds=[main_embed, image_embed])
+        return
+
     if boss_type == "Demon":
         main_embed = Embed(
             title="Demon",
