@@ -6,7 +6,8 @@ from info_boss import *
 
 class Options:
     main = ["Help", "NPCs", "Mobs and Bosses", "Items"]
-    boss = ["Spider Queen", "Cuboid", "Grave Digger", "Demon", "Crypt Slasher", "Elder Slasher", "Magmatic Spirit", "Royal Gargoyle", "Reborn Dragon", "Titanion"]
+    boss = ["Spider Queen", "Cuboid", "Grave Digger", "Demon", "Crypt Slasher", "Elder Slasher", "Magmatic Spirit",
+            "Royal Gargoyle", "Reborn Dragon", "Titanion", "StormGiant", "Soul Devourer", "Blastbone Bombardier"]
 
 
 async def boss_spawn_alert(boss, channel):
